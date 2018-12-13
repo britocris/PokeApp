@@ -12,8 +12,6 @@ angular.module('pokeApiApp')
   .controller('PruebaCtrl', function ($scope, $http, $q) {
 
     var _url = 'https://pokeapi.co/api/v2/pokemon-form/';
-    /* var promise = $http.get(urlBase)
-    console.log(promise) */
 
     var Pokemons = {
       get: function (_url) {
@@ -33,7 +31,6 @@ angular.module('pokeApiApp')
 
     var lista = function(){
       Pokemons.get(_url).then(function(response1){
-        console.log(response1.data.results.length)
         /* var i = response1.data.results.length; */ // i maneja la cantidad exacta de todos los Pokemons
         for( var j = 0; j < 20; j++){                // Para este ejemplo utilizo 20 para que no demore tanto
           var url = response1.data.results[j].url;
